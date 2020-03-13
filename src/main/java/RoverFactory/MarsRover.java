@@ -1,21 +1,65 @@
 package RoverFactory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import MarsRoverCoordinates.Coords;
+import MarsRoverDirection.DirectionMovement;
+import MarsRoverDirection.EastDirection;
+import MarsRoverDirection.NorthDirection;
+import MarsRoverDirection.SouthDirection;
+import MarsRoverDirection.WestDirection;
 import RoverMemento.RoverMemento;
 
 public class MarsRover implements Rover {
 	private Coords limitCoordinates;
 	private Coords roverCurrentCoordinates;
-	private String roverDirection;
+	private DirectionMovement roverDirection;
+	
+	private Map<Character, DirectionMovement> directionMap = new HashMap<Character,DirectionMovement>() {/**
+		 * 
+		 */
+		private static final long serialVersionUID = -8550219426603212645L;
+
+	{
+		put('N', new NorthDirection());
+		put('S', new SouthDirection());
+		put('E', new EastDirection());
+		put('W', new WestDirection());
+	}}; 
 
 	public MarsRover() {
 
 	}
 
-	public MarsRover(Coords limitcoordinates, Coords roverCurrentCoordinates, String roverDirection) {
+	public MarsRover(Coords limitcoordinates, Coords roverCurrentCoordinates, char roverDirection) {
+		ValidateLimits(limitCoordinates);
 		this.limitCoordinates = limitcoordinates;
+		
+		ValidatePosition(roverCurrentCoordinates, "Invalid positions was inputted for vehicle");
 		this.roverCurrentCoordinates = roverCurrentCoordinates;
-		this.roverDirection = roverDirection;
+		
+
+		ValidateDirection(roverDirection);
+		this.roverDirection = directionMap.get(roverDirection);
+	}
+	
+	private void ValidatePosition(Coords roverCurrentCoordinates, String message) {
+		if (roverCurrentCoordinates.IsNegative() || roverCurrentCoordinates.Compare(limitCoordinates)){
+			throw new IllegalArgumentException(message);
+		}
+	}
+	
+	private void ValidateLimits(Coords limitCoordinates) {
+		if (limitCoordinates.IsNegative()){
+			throw new IllegalArgumentException("Invalid limits were inputted for vehicle");
+		}
+	}
+	
+	public void ValidateDirection(char orientation) {
+		if (!directionMap.containsKey(orientation)){
+			throw new IllegalArgumentException("Invalid orientation was inputted for vehicle");
+		}
 	}
 	
 	@Override
@@ -39,13 +83,13 @@ public class MarsRover implements Rover {
 	}
 	
 	@Override
-	public String getDirection() {
+	public DirectionMovement getDirection() {
 		return this.roverDirection;
 	}
 
 	@Override
-	public void setDirection(String roverDirection) {
-		this.roverDirection = roverDirection;
+	public void setDirection(char roverDirection) {
+		this.roverDirection = directionMap.get(roverDirection);
 	}
 
 	public RoverMemento save() {
@@ -56,22 +100,28 @@ public class MarsRover implements Rover {
 		this.roverCurrentCoordinates = rv.getRoverCoordinates();
 		this.roverDirection = rv.getRoverDirection();
 	}
-
+	
 	@Override
-	public void moveForward(Coords currentCoordinates, String currentDirection) {
-		// TODO Auto-generated method stub
-		
+	public String toString() {
+		return roverCurrentCoordinates.toString() + " " + roverDirection.toString();
 	}
 
 	@Override
-	public void turnLeft(String currentDirection) {
-		// TODO Auto-generated method stub
-		
+	public void moveMarsRover() {
+		roverDirection.Move(roverCurrentCoordinates);
+		ValidatePosition(roverCurrentCoordinates, "Vehicle has moved out of bounds");
+		save();
 	}
 
 	@Override
-	public void turnRight(String currentDirection) {
-		// TODO Auto-generated method stub
-		
+	public void turnMarsRoverLeft() {
+		roverDirection = roverDirection.TurnLeft();
+		save();
+	}
+
+	@Override
+	public void turnMarsRoverRight() {
+		roverDirection = roverDirection.TurnRight(); 
+		save();
 	}
 }

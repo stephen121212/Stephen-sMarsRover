@@ -28,8 +28,8 @@ public class JavaMarsTestProgram {
 		public Coords getCurrentCoordinates() {
 			return this.commCoords.returnCurrentCoordinates();
 		}
-		
-		public String getDirection() {
+
+		public char getDirection() {
 			return this.commCoords.getDirection();
 		}
 }

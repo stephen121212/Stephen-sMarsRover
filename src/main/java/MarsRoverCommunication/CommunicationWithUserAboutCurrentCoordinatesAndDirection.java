@@ -1,17 +1,16 @@
 package MarsRoverCommunication;
 
 import java.util.Scanner;
-
 import MarsRoverCoordinates.Coords;
 
 public class CommunicationWithUserAboutCurrentCoordinatesAndDirection implements CommunicationCoordinates {
 	public Scanner sc = new Scanner(System.in);
 	public Coords currentRoverCoordinates;
-	public String currentDirection;
+	public char currentDirection;
 	
 	public CommunicationWithUserAboutCurrentCoordinatesAndDirection() {
 		currentRoverCoordinates = new Coords();
-		currentDirection = "N";
+		currentDirection = 'N';
 	}
 	
 	public void communicationCurrentCoordinatesAndDirection() {
@@ -34,13 +33,15 @@ public class CommunicationWithUserAboutCurrentCoordinatesAndDirection implements
 	}
 	
 	public void setDirection(String[] currentRoverCoordinatesinArray) {
-		currentDirection = currentRoverCoordinatesinArray[2];
+		String currentDirectionInSpring = currentRoverCoordinatesinArray[2];
+		char currentDirectionInChar = currentDirectionInSpring.charAt(0);
+		this.currentDirection = currentDirectionInChar;
 	}
 	
-	public String getDirection() {
-		return currentDirection;
+	public char getDirection() {
+		return this.currentDirection;
 	}
-	
+
 	public Coords returnCurrentCoordinates() {
 		return this.currentRoverCoordinates;
 	}

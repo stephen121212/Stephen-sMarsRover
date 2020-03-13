@@ -1,12 +1,13 @@
 package RoverMemento;
 
 import MarsRoverCoordinates.Coords;
+import MarsRoverDirection.DirectionMovement;
 
 public class RoverMemento {
 	private Coords roverCurrentCoordinates;
-	private String direction;
+	private DirectionMovement direction;
 
-	public RoverMemento(Coords roverCurrentCoordinates, String direction) {
+	public RoverMemento(Coords roverCurrentCoordinates, DirectionMovement direction) {
 		this.roverCurrentCoordinates = roverCurrentCoordinates;
 		this.direction = direction;
 	}
@@ -15,7 +16,7 @@ public class RoverMemento {
 		return roverCurrentCoordinates;
 	}
 
-	public String getRoverDirection() {
+	public DirectionMovement getRoverDirection() {
 		return direction;
 	}
 }

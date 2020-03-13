@@ -7,7 +7,7 @@ public class RoverFactory {
 	private JavaMarsTestProgram javaTestProgram;
 	Coords limitCoordinates;
 	Coords roverCurrentCoordinates;
-	String roverDirection;
+	char roverDirection;
 	
 	public RoverFactory(JavaMarsTestProgram javaTestProgram) {
 		this.javaTestProgram = javaTestProgram;

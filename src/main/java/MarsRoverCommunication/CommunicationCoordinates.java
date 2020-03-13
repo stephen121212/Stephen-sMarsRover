@@ -7,6 +7,6 @@ public interface CommunicationCoordinates {
 	void parseCurrentCoordinates(String currentRoverCoordinatesinString);
 	void setCurrentCoordinates(int currentCoordinatesX, int currentCoordinatesY);
 	void setDirection(String[] currentRoverCoordinatesinArray);
-	String getDirection();
+	char getDirection();
 	Coords returnCurrentCoordinates();
 }

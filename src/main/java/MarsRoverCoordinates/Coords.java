@@ -30,6 +30,25 @@ public class Coords {
 		return y;
 	}
 	
+	public boolean IsNegative() {
+		if(x < 0 || y < 0) {
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public boolean Compare(Coords coords) {
+		if(x > coords.x || y > coords.y) {
+			return true;
+		}
+		
+		else{
+			return false;
+		}
+	}
+	
 	public int MoveXByAmount(int amount) {
 		 return x = x + amount;
 	 }
