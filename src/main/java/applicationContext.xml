@@ -10,4 +10,5 @@
     <!-- Setting up beans -->
     <bean id = "MarsRoverFactory" class = "RoverFactory.RoverFactory"> <constructor-arg ref = "JavaMarsTestProgramConstructor"/></bean>
     <bean id = "JavaMarsTestProgramConstructor" class = "MarsRoverCommunication.JavaMarsTestProgram"></bean>
+    <bean id = "RoverMemento" class = "RoverMemento.CareTaker"></bean>
 </beans>

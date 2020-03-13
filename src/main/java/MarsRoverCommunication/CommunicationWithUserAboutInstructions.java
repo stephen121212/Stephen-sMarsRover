@@ -26,7 +26,7 @@ public class CommunicationWithUserAboutInstructions implements CommunicationInst
 	}};
 	
 	public CommunicationWithUserAboutInstructions() {
-		
+		communicationInstructionsOfVehicle();
 	}
 	
 	public CommunicationWithUserAboutInstructions(Rover marsRover) {

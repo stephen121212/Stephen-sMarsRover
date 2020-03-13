@@ -12,7 +12,7 @@ import MarsRoverDirection.WestDirection;
 import RoverMemento.RoverMemento;
 
 public class MarsRover implements Rover {
-	private Coords limitCoordinates;
+	private Coords limitCurrentCoordinates;
 	private Coords roverCurrentCoordinates;
 	private DirectionMovement roverDirection;
 	
@@ -33,8 +33,8 @@ public class MarsRover implements Rover {
 	}
 
 	public MarsRover(Coords limitcoordinates, Coords roverCurrentCoordinates, char roverDirection) {
-		ValidateLimits(limitCoordinates);
-		this.limitCoordinates = limitcoordinates;
+		ValidateLimits(limitcoordinates);
+		this.limitCurrentCoordinates = limitcoordinates;
 		
 		ValidatePosition(roverCurrentCoordinates, "Invalid positions was inputted for vehicle");
 		this.roverCurrentCoordinates = roverCurrentCoordinates;
@@ -45,7 +45,7 @@ public class MarsRover implements Rover {
 	}
 	
 	private void ValidatePosition(Coords roverCurrentCoordinates, String message) {
-		if (roverCurrentCoordinates.IsNegative() || roverCurrentCoordinates.Compare(limitCoordinates)){
+		if (roverCurrentCoordinates.IsNegative() || roverCurrentCoordinates.Compare(limitCurrentCoordinates)){
 			throw new IllegalArgumentException(message);
 		}
 	}
@@ -64,12 +64,12 @@ public class MarsRover implements Rover {
 	
 	@Override
 	public void setLimitCoordinates(Coords limitCoordinates) {
-		this.limitCoordinates = limitCoordinates;
+		this.limitCurrentCoordinates = limitCoordinates;
 	}
 	
 	@Override
 	public Coords getLimitCoordinates() {
-		return this.limitCoordinates;
+		return this.limitCurrentCoordinates;
 	}
 
 	@Override
@@ -110,18 +110,15 @@ public class MarsRover implements Rover {
 	public void moveMarsRover() {
 		roverDirection.Move(roverCurrentCoordinates);
 		ValidatePosition(roverCurrentCoordinates, "Vehicle has moved out of bounds");
-		save();
 	}
 
 	@Override
 	public void turnMarsRoverLeft() {
 		roverDirection = roverDirection.TurnLeft();
-		save();
 	}
 
 	@Override
 	public void turnMarsRoverRight() {
 		roverDirection = roverDirection.TurnRight(); 
-		save();
 	}
 }

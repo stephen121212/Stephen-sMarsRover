@@ -14,6 +14,10 @@ public class CommunicationWithUserAboutCurrentCoordinatesAndDirection implements
 	}
 	
 	public void communicationCurrentCoordinatesAndDirection() {
+		enterCoordinatesAndDirection();
+	}
+	
+	public void enterCoordinatesAndDirection() {
 		System.out.println("Enter in the Coordinates of the rover and the current Direction");
 		String currentRoverCoordinatesinString = sc.nextLine();
 		parseCurrentCoordinates(currentRoverCoordinatesinString);
