@@ -1,4 +1,4 @@
-package MarsRoverCoordinates;
+package marsRoverCoordinates;
 
 public class Coords {
 	private int x;
@@ -30,7 +30,7 @@ public class Coords {
 		return y;
 	}
 	
-	public boolean IsNegative() {
+	public boolean isNegative() {
 		if(x < 0 || y < 0) {
 			return true;
 		}
@@ -49,16 +49,18 @@ public class Coords {
 		}
 	}
 	
-	public int MoveXByAmount(int amount) {
-		 return x = x + amount;
+	public int moveXByAmount(int amount) {
+		 this.x = x + amount;
+		 return this.x;
 	 }
 	 
-	 public int MoveYByAmount(int amount){
-		 return y = y + amount; 
+	 public int moveYByAmount(int amount){
+		 this.y = y + amount; 
+		 return this.y;
 	 }
 	 
 	 @Override
 	 public String toString() {
-		 return x + " " + y;
+		 return this.x + " " + this.y;
 	 }
 }

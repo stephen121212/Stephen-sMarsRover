@@ -1,12 +1,16 @@
 package MarsRoverCommunication;
 
 import java.util.Scanner;
-import MarsRoverCoordinates.Coords;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import marsRoverCoordinates.Coords;
 
 public class CommunicationWithUserAboutCurrentCoordinatesAndDirection implements CommunicationCoordinates {
 	public Scanner sc = new Scanner(System.in);
 	public Coords currentRoverCoordinates;
 	public char currentDirection;
+	private static final Logger logger = Logger.getLogger(CommunicationWithUserAboutCurrentCoordinatesAndDirection.class.getName());
 	
 	public CommunicationWithUserAboutCurrentCoordinatesAndDirection() {
 		currentRoverCoordinates = new Coords();
@@ -18,7 +22,7 @@ public class CommunicationWithUserAboutCurrentCoordinatesAndDirection implements
 	}
 	
 	public void enterCoordinatesAndDirection() {
-		System.out.println("Enter in the Coordinates of the rover and the current Direction");
+		logger.log(Level.INFO,"Enter in the Coordinates of the rover and the current Direction");
 		String currentRoverCoordinatesinString = sc.nextLine();
 		parseCurrentCoordinates(currentRoverCoordinatesinString);
 	}

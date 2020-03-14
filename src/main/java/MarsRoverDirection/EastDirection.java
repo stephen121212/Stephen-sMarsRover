@@ -1,11 +1,12 @@
 package MarsRoverDirection;
 
-import MarsRoverCoordinates.Coords;
+import marsRoverCoordinates.Coords;
 
 public class EastDirection implements DirectionMovement {
+
 	@Override
 	public Coords Move(Coords input) {
-		input.MoveXByAmount(1);
+		input.moveXByAmount(1);
 		return input;
 	}
 
@@ -21,6 +22,7 @@ public class EastDirection implements DirectionMovement {
 
 	@Override
 	public String toString() {
-		return "E";
+		String currentDirection = "E";
+		return currentDirection;
 	}
 }

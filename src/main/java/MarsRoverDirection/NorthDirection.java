@@ -1,11 +1,11 @@
 package MarsRoverDirection;
 
-import MarsRoverCoordinates.Coords;
+import marsRoverCoordinates.Coords;
 
 public class NorthDirection implements DirectionMovement {
 	@Override
 	public Coords Move(Coords input) {
-		input.MoveYByAmount(1);
+		input.moveYByAmount(1);
 		return input;
 	}
 
@@ -21,6 +21,7 @@ public class NorthDirection implements DirectionMovement {
 
 	@Override
 	public String toString() {
-		return "N";
+		String currentDirection = "N";
+		return currentDirection;
 	}
 }

@@ -3,36 +3,30 @@ package RoverFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-import MarsRoverCoordinates.Coords;
 import MarsRoverDirection.DirectionMovement;
 import MarsRoverDirection.EastDirection;
 import MarsRoverDirection.NorthDirection;
 import MarsRoverDirection.SouthDirection;
 import MarsRoverDirection.WestDirection;
 import RoverMemento.RoverMemento;
+import marsRoverCoordinates.Coords;
 
 public class MarsRover implements Rover {
 	private Coords limitCurrentCoordinates;
 	private Coords roverCurrentCoordinates;
 	private DirectionMovement roverDirection;
-	
-	private Map<Character, DirectionMovement> directionMap = new HashMap<Character,DirectionMovement>() {/**
-		 * 
-		 */
-		private static final long serialVersionUID = -8550219426603212645L;
-
-	{
-		put('N', new NorthDirection());
-		put('S', new SouthDirection());
-		put('E', new EastDirection());
-		put('W', new WestDirection());
-	}}; 
+	private Map<Character, DirectionMovement> directionMap; 
 
 	public MarsRover() {
 
 	}
 
 	public MarsRover(Coords limitcoordinates, Coords roverCurrentCoordinates, char roverDirection) {
+		directionMap = new HashMap<Character,DirectionMovement>();
+		directionMap.put('N', new NorthDirection());
+		directionMap.put('S', new SouthDirection());
+		directionMap.put('E', new EastDirection());
+		directionMap.put('W', new WestDirection());
 		ValidateLimits(limitcoordinates);
 		this.limitCurrentCoordinates = limitcoordinates;
 		
@@ -45,13 +39,13 @@ public class MarsRover implements Rover {
 	}
 	
 	private void ValidatePosition(Coords roverCurrentCoordinates, String message) {
-		if (roverCurrentCoordinates.IsNegative() || roverCurrentCoordinates.Compare(limitCurrentCoordinates)){
+		if (roverCurrentCoordinates.isNegative() || roverCurrentCoordinates.Compare(limitCurrentCoordinates)){
 			throw new IllegalArgumentException(message);
 		}
 	}
 	
 	private void ValidateLimits(Coords limitCoordinates) {
-		if (limitCoordinates.IsNegative()){
+		if (limitCoordinates.isNegative()){
 			throw new IllegalArgumentException("Invalid limits were inputted for vehicle");
 		}
 	}

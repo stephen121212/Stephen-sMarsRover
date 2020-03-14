@@ -1,7 +1,7 @@
 package RoverMemento;
 
-import MarsRoverCoordinates.Coords;
 import MarsRoverDirection.DirectionMovement;
+import marsRoverCoordinates.Coords;
 
 public class RoverMemento {
 	private Coords roverCurrentCoordinates;

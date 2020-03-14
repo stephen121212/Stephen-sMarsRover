@@ -1,6 +1,6 @@
 package MarsRoverCommunication;
 
-import MarsRoverCoordinates.Coords;
+import marsRoverCoordinates.Coords;
 
 public interface CommunicationMap {
 	void communicationSizeOfMap();

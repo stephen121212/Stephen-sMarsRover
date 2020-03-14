@@ -1,6 +1,6 @@
 package MarsRoverDirection;
 
-import MarsRoverCoordinates.Coords;
+import marsRoverCoordinates.Coords;
 
 public interface DirectionMovement {
 	Coords Move(Coords input);

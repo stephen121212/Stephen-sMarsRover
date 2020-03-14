@@ -1,7 +1,7 @@
 package RoverFactory;
 
 import MarsRoverCommunication.JavaMarsTestProgram;
-import MarsRoverCoordinates.Coords;
+import marsRoverCoordinates.Coords;
 
 public class RoverFactory {
 	private JavaMarsTestProgram javaTestProgram;

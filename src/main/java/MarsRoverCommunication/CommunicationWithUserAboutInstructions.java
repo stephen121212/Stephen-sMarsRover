@@ -1,9 +1,11 @@
 package MarsRoverCommunication;
 
 import java.util.HashMap;
+
 import java.util.Map;
 import java.util.Scanner;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import MarsRoverMovement.Instruction;
 import MarsRoverMovement.MoveInstruction;
 import MarsRoverMovement.TurnLeftInstruction;
@@ -13,28 +15,20 @@ import RoverFactory.Rover;
 public class CommunicationWithUserAboutInstructions implements CommunicationInstructions {
 	public Scanner sc = new Scanner(System.in);
 	private Rover marsRover;
+	private static final Logger logger = Logger.getLogger(CommunicationWithUserAboutInstructions.class.getName());
 	
-	private Map<Character, Instruction> charMap = new HashMap<Character,Instruction>() {/**
-		 * 
-		 */
-		private static final long serialVersionUID = 3187190494001035512L;
-
-	{
-		put('M', new MoveInstruction());
-		put('L', new TurnLeftInstruction());
-		put('R', new TurnRightInstruction());
-	}};
-	
-	public CommunicationWithUserAboutInstructions() {
-		communicationInstructionsOfVehicle();
-	}
+	private Map<Character, Instruction> charMap;
 	
 	public CommunicationWithUserAboutInstructions(Rover marsRover) {
+		charMap = new HashMap<Character,Instruction>();
+		charMap.put('M', new MoveInstruction());
+		charMap.put('L', new TurnLeftInstruction());
+		charMap.put('R', new TurnRightInstruction());
 		this.marsRover = marsRover;
 	}
 	
 	public void communicationInstructionsOfVehicle() {
-		System.out.println("Enter in the Instructions of the Vehicle"); 
+		logger.log(Level.INFO,"Enter in the Instructions of the Vehicle"); 
 		String instructions = sc.nextLine();
 		parseInstructions(instructions);
 	}

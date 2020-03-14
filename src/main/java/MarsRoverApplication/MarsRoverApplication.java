@@ -1,5 +1,8 @@
 package MarsRoverApplication;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import MarsRoverCommunication.CommunicationWithUserAboutInstructions;
 import RoverFactory.Rover;
@@ -7,6 +10,8 @@ import RoverFactory.RoverFactory;
 import RoverMemento.CareTaker;
 
 public class MarsRoverApplication {
+	private static final Logger logger = Logger.getLogger(MarsRoverApplication.class.getName());
+	
 	public static void main(String[] args) {
 		//Load configuration file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -21,7 +26,7 @@ public class MarsRoverApplication {
 		cwuAboutInstructions.communicationInstructionsOfVehicle();
 		rvCareTaker.save(rv1);
 		rv1.setDirection('N');
-		System.out.println("Current Coordinates: " + rv1.getCurrentCoordinates() + " Direction: " + rv1.getDirection().toString());
+		logger.log(Level.INFO,"Current Coordinates: " + rv1.getCurrentCoordinates() + " Direction: " + rv1.getDirection().toString());
 		
 		//Close the context
 		context.close();

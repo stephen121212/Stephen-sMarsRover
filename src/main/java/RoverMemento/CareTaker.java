@@ -1,11 +1,12 @@
 package RoverMemento;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 import RoverFactory.Rover;
 
 public class CareTaker {
-	private Stack<RoverMemento> roverHistory = new Stack<>();
+	private Deque<RoverMemento> roverHistory = new ArrayDeque<>();
 
 	public void save(Rover rv) {
 		roverHistory.push(rv.save());
