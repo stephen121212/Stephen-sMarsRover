@@ -85,7 +85,7 @@ public class MarsRover implements Rover {
 	public void setDirection(char roverDirection) {
 		this.roverDirection = directionMap.get(roverDirection);
 	}
-
+	
 	public RoverMemento save() {
 		return new RoverMemento(this.roverCurrentCoordinates, this.roverDirection);
 	}
@@ -97,7 +97,7 @@ public class MarsRover implements Rover {
 	
 	@Override
 	public String toString() {
-		return roverCurrentCoordinates.toString() + " " + roverDirection.toString();
+		return roverCurrentCoordinates.toString() + roverDirection.toString();
 	}
 
 	@Override
