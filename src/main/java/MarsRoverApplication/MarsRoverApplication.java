@@ -24,6 +24,7 @@ public class MarsRoverApplication {
 		Rover rv1 = rv.createRover("MARSROVER");
 		CommunicationWithUserAboutInstructions cwuAboutInstructions = new CommunicationWithUserAboutInstructions(rv1);
 		cwuAboutInstructions.communicationInstructionsOfVehicle();
+		rvCareTaker.save(rv1);
 		logger.log(Level.INFO,"Current Coordinates: " + rv1.getCurrentCoordinates() + " Direction: " + rv1.getDirection().toString());
 		
 		//Close the context
