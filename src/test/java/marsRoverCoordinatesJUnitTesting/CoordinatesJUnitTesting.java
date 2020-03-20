@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import marsRoverCoordinates.Coords;
 
+//Unit Test
 public class CoordinatesJUnitTesting {
 	@Test
 	public void test() {

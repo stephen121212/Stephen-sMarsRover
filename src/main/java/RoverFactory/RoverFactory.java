@@ -9,9 +9,19 @@ public class RoverFactory {
 	Coords roverCurrentCoordinates;
 	char roverDirection;
 	
+	public RoverFactory() {
+		
+	}
+	
 	public RoverFactory(JavaMarsTestProgram javaTestProgram) {
 		this.javaTestProgram = javaTestProgram;
 		assignCoordinatesAndDirection();
+	}
+	
+	public RoverFactory(Coords limitCoordinates, Coords roverCurrentCoordinates, char roverDirection) {
+		this.limitCoordinates = limitCoordinates;
+		this.roverCurrentCoordinates = roverCurrentCoordinates;
+		this.roverDirection = roverDirection;
 	}
 	
 	public void assignCoordinatesAndDirection() {
