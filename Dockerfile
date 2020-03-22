@@ -1,2 +1,2 @@
-FROM nginx:1.15.8-alpine
+FROM java:8
 COPY . /app
