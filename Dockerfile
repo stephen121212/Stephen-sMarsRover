@@ -1,4 +1,2 @@
-FROM java:8
+FROM nginx:1.15.8-alpine
 COPY . /app
-RUN make /app
-CMD java /app.java
