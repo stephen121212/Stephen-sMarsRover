@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 //Unit Test
 public class CoordinatesJUnitTesting {

@@ -2,7 +2,7 @@ package RoverFactory;
 
 import MarsRoverDirection.DirectionMovement;
 import RoverMemento.RoverMemento;
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public interface Rover {
 	RoverMemento save();

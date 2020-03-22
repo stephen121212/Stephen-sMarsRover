@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import RoverFactory.MarsRover;
 import RoverMemento.CareTaker;
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class RoverMementoJUnitTesting {
 	@Test

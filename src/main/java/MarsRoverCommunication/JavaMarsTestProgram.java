@@ -1,6 +1,6 @@
 package MarsRoverCommunication;
 
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class JavaMarsTestProgram {
 		private CommunicationWithUserAboutSizeOfMap commMap;

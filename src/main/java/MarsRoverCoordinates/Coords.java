@@ -1,4 +1,4 @@
-package marsRoverCoordinates;
+package MarsRoverCoordinates;
 
 public class Coords {
 	private int x;

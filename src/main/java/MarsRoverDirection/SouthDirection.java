@@ -1,6 +1,6 @@
 package MarsRoverDirection;
 
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class SouthDirection implements DirectionMovement {
 	@Override

@@ -9,7 +9,7 @@ import MarsRoverDirection.NorthDirection;
 import MarsRoverDirection.SouthDirection;
 import MarsRoverDirection.WestDirection;
 import RoverMemento.RoverMemento;
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class MarsRover implements Rover {
 	private Coords limitCurrentCoordinates;

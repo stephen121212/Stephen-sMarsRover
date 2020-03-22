@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import MarsRoverMovement.TurnRightInstruction;
 import RoverFactory.MarsRover;
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class TurnRightInstructionJUnitTest {
 	@Test

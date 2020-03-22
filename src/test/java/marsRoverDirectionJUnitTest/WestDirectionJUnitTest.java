@@ -2,10 +2,11 @@ package marsRoverDirectionJUnitTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 import org.junit.jupiter.api.Test;
 
 import MarsRoverDirection.WestDirection;
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class WestDirectionJUnitTest {
 	@Test

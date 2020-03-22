@@ -2,10 +2,11 @@ package marsRoverAndFactoryJUnitTesting;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 import org.junit.jupiter.api.Test;
 
 import RoverFactory.MarsRover;
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 //Unit Test
 public class MarsRoverJUnitTest {

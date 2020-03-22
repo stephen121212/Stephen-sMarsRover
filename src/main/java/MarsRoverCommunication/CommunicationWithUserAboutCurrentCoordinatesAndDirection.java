@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import marsRoverCoordinates.Coords;
+import MarsRoverCoordinates.Coords;
 
 public class CommunicationWithUserAboutCurrentCoordinatesAndDirection implements CommunicationCoordinates {
 	public Scanner sc = new Scanner(System.in);
