@@ -9,6 +9,7 @@ import RoverFactory.Rover;
 import RoverFactory.RoverFactory;
 import RoverMemento.CareTaker;
 
+/*Test*/
 public class MarsRoverApplication {
 	private static final Logger logger = Logger.getLogger(MarsRoverApplication.class.getName());
 	
