@@ -2,5 +2,5 @@ projectKey=StephensMarsProject
 serverUrl=http://localhost:9000
 serverVersion=8.2.0.32929
 dashboardUrl=http://localhost:9000/dashboard?id=StephensMarsProject
-ceTaskId=AXDeVxkwI5yDU2Xwtky7
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXDeVxkwI5yDU2Xwtky7
+ceTaskId=AXEHGVw1nwQ11i8LwvO2
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXEHGVw1nwQ11i8LwvO2
