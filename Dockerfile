@@ -1,2 +1,2 @@
-FROM java:11
+FROM java:8
 COPY . /app
